@@ -9,6 +9,7 @@
 </style>
 <script>
 const add = function (href) {
+  if (!href.length) return
   const link = document.createElement("a")
   link.setAttribute("href", `https://${href}`)
   link.textContent = href
