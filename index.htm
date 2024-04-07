@@ -8,11 +8,14 @@
 }
 </style>
 <script>
-var links = "jeffjenx.com,facebook.com/jeffjenx.me"
-links.split(",").map(link => {
-  var el = document.createElement("a")
-  el.setAttribute("href", `https://${link}`)
-  el.textContent = link
-  document.body.appendChild(el)
-})
+const add = function (href) {
+  const link = document.createElement("a")
+  link.setAttribute("href", `https://${href}`)
+  link.textContent = href
+  document.body.appendChild(link)
+}
+const response = fetch('links.csv')
+  .then(res => res.text())
+  .then(links => links.split("\n").map(add))
+  .catch(err => console.log(err))
 </script>
