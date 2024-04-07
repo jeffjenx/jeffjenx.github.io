@@ -1,4 +1,4 @@
-Hello, World!
+<h1>Hello, World!</h1>
 <style>
 @media (prefers-color-scheme: dark) { 
   html, body {
@@ -7,3 +7,12 @@ Hello, World!
   }
 }
 </style>
+<script>
+var links = "jeffjenx.com,facebook.com/jeffjenx.me"
+links.split(",").map(link => {
+  var el = document.createElement("a")
+  el.setAttribute("href", `https://${link}`)
+  el.textContent = link
+  document.body.appendChild(el)
+})
+</script>
